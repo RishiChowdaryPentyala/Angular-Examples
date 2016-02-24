@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <link data-require="bootstrap-css@*" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body ng-controller="UserController">
+    <h1>Temperature Monitor</h1>
+    <form>
+        <label for="temperture">Add Temperture:</label>
+        <input name="temperture" id="temperture" ng-model="temp">
+        <p ng-show="!isNull" class="help-block">invalid Input! Temperature can't be null</p>
+        <p ng-show="!isValid" class="help-block">invalid Input! Please enter a valid input.</p>
+        <!--  <button >Add</button> -->
+        <button type="button" ng-click="addTemp()" class="btn btn-primary">Add</button>
+        <p ng-show="temps[0]">{{temps}}</p>
+    </form>
+    <hr />
+    <section>
+        <button type="button" ng-click="getMedianTemp()" class="btn btn-primary">Get Median Temperture</button>
+        Current Median: {{medianTemp}}
+        <!-- display current media here-->
+    </section>
+    <hr>
+    <hr>
+    <p>developer name: Rishi</p>
+
+    <hr>
+    <a href="jasmine-test.html">Run Unit Tests</a>
+    <script data-require="angular.js@*" data-semver="1.3.5" src="https://code.angularjs.org/1.3.5/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
